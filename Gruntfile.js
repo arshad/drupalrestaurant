@@ -373,22 +373,22 @@ module.exports = function (grunt) {
 
         buildcontrol: {
             options: {
-              dir: 'dist',
-              commit: true,
-              push: true,
-              message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+                dir: 'dist',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
             },
             pages: {
-              options: {
-                remote: 'git@github.com:arshad/drupalrestaurant.git',
-                branch: 'gh-pages'
-              }
+                options: {
+                    remote: 'git@github.com:arshad/drupalrestaurant.git',
+                    branch: 'gh-pages'
+                }
             },
             local: {
-              options: {
-                remote: '../',
-                branch: 'build'
-              }
+                options: {
+                    remote: '../',
+                    branch: 'build'
+                }
             }
         }
     });
@@ -428,6 +428,8 @@ module.exports = function (grunt) {
         ]);
     });
 
+    grunt.loadNpmTasks('grunt-build-control');
+
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -447,11 +449,5 @@ module.exports = function (grunt) {
         'newer:jshint',
         'test',
         'build'
-    ]);
-
-    grunt.loadNpmTasks('grunt-build-control');
-
-    grunt.registerTask('build', [
-      // Collection of tasks that build code to the 'dist' directory...
     ]);
 };
