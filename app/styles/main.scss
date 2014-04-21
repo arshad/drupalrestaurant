@@ -167,3 +167,12 @@ div.counter {
         border-bottom: 0;
     }
 }
+@media screen and (max-width: 540px) {
+    .jumbotron {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .feature {
+        margin-bottom: 30px;
+    }
+}
